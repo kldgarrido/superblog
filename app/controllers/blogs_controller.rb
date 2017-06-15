@@ -4,6 +4,8 @@ class BlogsController < ApplicationController
 		@blogs = Blog.order('updated_at DESC')
 	end
 
-	
+	def show
+		@blog = Blog.find(params[:id])
+	end
 
 end

@@ -6,8 +6,29 @@
         <% @blogs.each do |blog| %>
         <div>
               <h3><%= link_to blog.title, blog_path(blog)%></h3>
-              <h6><%= blog.updated_at %></h6>
-              <p><%= blog.body[0..250] %> ...</p>
+
+              <h6>
+                <span id="helpBlock" class="help-block">
+                <% if blog.user.present? %>
+                  published by <%= blog.user.email%> <%= time_ago_in_words(blog.created_at) %>
+                <% else %>
+                  published by "anonimous user" <%= time_ago_in_words(blog.created_at) %>
+                <% end %>
+                </span>
+              </h6>
+
+              <p><%= blog.body[0..250] %> 
+                  <%= link_to " ... read more", blog_path(blog)%>
+              </p>
+
+              <% if current_user==blog.user && signed_in? %>
+
+                 <div class="actions">
+                    <%= link_to "<span class='glyphicon glyphicon-pencil'><span>".html_safe, edit_blog_path(blog) %>
+                    <%= link_to "<span class='glyphicon glyphicon-trash'><span>".html_safe, blog, method: :delete, data: { confirm: "¿Estás seguro de eliminar esta habitación?" }%>
+                 </div>
+              <% end %>
+
         </div>
         <% end %>
       

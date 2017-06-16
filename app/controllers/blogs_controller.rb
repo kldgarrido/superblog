@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
 
+	before_action :authenticate_user!, except: [:index, :show]
+
 	def index
 		@blogs = Blog.order('updated_at DESC')
 	end

@@ -37,6 +37,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'annotate'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
+gem 'md_simple_editor'
+gem 'redcarpet'
 
 
 group :development, :test do

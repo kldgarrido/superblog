@@ -17,7 +17,7 @@
                 </span>
               </h6>
 
-              <p><%= blog.body[0..250] %> 
+              <p><%= markdown(blog.body[0..250]) %> 
                   <%= link_to " ... read more", blog_path(blog)%>
               </p>
 

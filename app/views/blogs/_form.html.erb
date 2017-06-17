@@ -20,7 +20,9 @@
           <%= f.text_field :title, class: "form-control input-lg", placeholder: "Ingresa el titulo del blog" %>
         </div>
         <div class="form-group">
-          <%= f.text_area :body, class: "form-control input-lg", placeholder: "Ingresa la descripción del blog" %>
+          <%= md_simple_editor('btn-xs')  do %>
+            <%= f.text_area :body, class: "form-control input-lg", placeholder: "Escribe ..." %>
+          <% end %>
         </div>
         <div>
           <%= f.submit form_title, class: "btn btn-primary btn-lg btn-block" %>

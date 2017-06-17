@@ -11,6 +11,10 @@
 #
 
 class Blog < ApplicationRecord
+	validates :title, :presence => true
+	validates :body, :presence => true, :length => { :minimum => 251}
+
+
 	has_many :comments
 	belongs_to :user
 end

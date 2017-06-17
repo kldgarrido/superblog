@@ -34,7 +34,7 @@
 
           
           <% if signed_in? %>
-            <li class="active"><a href="/post/new">Nuevo Post<span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="/blogs/new">Nuevo Post<span class="sr-only">(current)</span></a></li>
 
             <li><%= link_to "Salir", destroy_user_session_path, method: :DELETE %></li>
           <% end %>

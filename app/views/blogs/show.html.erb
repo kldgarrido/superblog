@@ -5,6 +5,31 @@
 				<h3><%= @blog.title %></h3>
 				<h6><%= @blog.updated_at %></h6>
 				<p class="text-justify" ><%= markdown(@blog.body) %></p>
+
+			</div>
+
+			<div class="comments">
+				<h2>Comentarios</h2>
+
+				<% @blog.comments.each do |comment| %>
+				<div class="panel panel-default">
+					<header class="panel-heading"><img src="<%= Gravatar.new("#{comment.user.email}").image_url %>" class="img-circle" width="32" height="32"  /> <%= comment.user.email %> <%= time_ago_in_words(comment.created_at) %></header>
+					<div class="panel-body"><%= comment.body %></div>
+				</div>
+				<% end %>
+
+				<% if signed_in? %>
+				<%= form_for [@blog, @blog.comments.build] do |f| %>
+				<div class="form-group">
+					<%= f.text_area :body, class: "form-control", placeholder: "Agregar comentario" %>
+				</div>
+
+				<div class="actions text-right">
+					<%= f.submit "Comentar", class: "btn btn-primary" %>
+				</div>
+				<% end %>
+				<% end %>
+				
 			</div>
 			
 		</div>

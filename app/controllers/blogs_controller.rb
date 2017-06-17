@@ -41,7 +41,7 @@ class BlogsController < ApplicationController
 	  blog = Blog.find(params[:id])
 	  blog.destroy
 
-	  redirect_to blog_path, notice: "El blog fue eliminado con éxito"
+	  redirect_to blogs_path, notice: "El blog fue eliminado con éxito"
 	end
 
 	private

@@ -11,6 +11,9 @@
 #
 
 class Comment < ApplicationRecord
-  belongs_to :blog
-  belongs_to :user
+	validates :blog, :presence => true
+	validates :user, :presence => true
+
+	belongs_to :blog
+	belongs_to :user
 end

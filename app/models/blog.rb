@@ -12,8 +12,8 @@
 
 class Blog < ApplicationRecord
 	validates :title, :presence => true
-	validates :body, :presence => true, :length => { :minimum => 251}
-
+	validates :body, :presence => true, :length => { :minimum => 250}
+	validates :user, :presence => true
 
 	has_many :comments
 	belongs_to :user

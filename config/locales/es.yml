@@ -10,6 +10,8 @@ es:
       user:
         signed_out: "Se cerro la sesión de usuario"
         signed_in: "Inicio de sesión"
+    registrations:
+      user:
         signed_up: "Se creo el usuario"
 
   activerecord:

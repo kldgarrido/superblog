@@ -10,6 +10,7 @@ es:
       user:
         signed_out: "Se cerro la sesión de usuario"
         signed_in: "Inicio de sesión"
+        signed_up: "Se creo el usuario"
 
   activerecord:
     attributes:

@@ -3,6 +3,13 @@ es:
     messages:
       blank: "no puede estar en blanco"
       invalid: "es inválido"
+      too_short: "es demasiado corto (250 caracteres mínimo)"
+
+  devise:
+    sessions:
+      user:
+        signed_out: "Se cerro la sesión de usuario"
+        signed_in: "Inicio de sesión"
 
   activerecord:
     attributes:
@@ -11,7 +18,7 @@ es:
         password: "Contraseña"
       blog:
         title: "Titulo"
-        body: "Texto"
+        body: "Cuerpo"
       comment:
         body: "comentario"
   datetime:

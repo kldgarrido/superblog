@@ -9,7 +9,9 @@
 			</div>
 
 			<div class="comments">
-				<h2>Comentarios</h2>
+				<h3>Comentarios</h3>
+
+				
 
 				<% @blog.comments.each do |comment| %>
 				<div class="panel panel-default">
@@ -20,8 +22,9 @@
 
 				<% if signed_in? %>
 				<%= form_for [@blog, @blog.comments.build] do |f| %>
+
 				<div class="form-group">
-					<%= f.text_area :body, class: "form-control", placeholder: "Agregar comentario" %>
+					<%= f.text_area :body, class: "form-control", placeholder: "Agregar comentario", :required => true %>
 				</div>
 
 				<div class="actions text-right">

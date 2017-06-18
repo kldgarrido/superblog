@@ -13,6 +13,8 @@
 class Comment < ApplicationRecord
 	validates :blog, :presence => true
 	validates :user, :presence => true
+	validates :body, :presence => true
+	validates :body, :presence => true, :length => { :minimum => 1}
 
 	belongs_to :blog
 	belongs_to :user

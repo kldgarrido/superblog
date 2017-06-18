@@ -4,6 +4,7 @@ es:
       blank: "no puede estar en blanco"
       invalid: "es inválido"
       too_short: "es demasiado corto (250 caracteres mínimo)"
+      not_saved: "No se ha guardo los cambios"
 
   devise:
     sessions:
@@ -13,6 +14,10 @@ es:
     registrations:
       user:
         signed_up: "Se creo el usuario"
+    failure:
+      user:
+        invalid: "Usuario o contraseña incorectos"
+        not_found_in_database: "Crendenciales incorrectas"
 
   activerecord:
     attributes:
@@ -24,6 +29,15 @@ es:
         body: "Cuerpo"
       comment:
         body: "comentario"
+    errors:
+      models:
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: "Confirme contraseña"
+            email:
+              taken: "Usuario ya existe"
+
   datetime:
     distance_in_words:
       about_x_hours:

@@ -10,6 +10,8 @@
 
 <body>
 
+  <div class="container">
+
   <% if flash[:notice] %>
   <div class="alert alert-info"><%= flash[:notice] %>
   </div>
@@ -66,5 +68,6 @@
   </nav>
   
   <%= yield %>
+  </div>
 </body>
 </html>
